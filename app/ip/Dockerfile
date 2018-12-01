@@ -21,12 +21,12 @@ RUN R -e "install.packages(c('shiny', 'rmarkdown'), repos = 'https://cloud.r-pro
 
 # Copy the app to the image
 RUN mkdir /root/ip
-COPY ../app/ip /root/ip
+COPY app/ip /root/ip
 RUN rm /root/ip/Dockerfile
 
 # Make sure that Shiny app will run on the port expected by ShinyProxy
 # and that one will be able to connect to the app from the outside world
-COPY ../cfg/Rprofile.site /usr/lib/R/etc/
+COPY cfg/Rprofile.site /usr/lib/R/etc
 
 # Expose port 3838 to the outside world
 EXPOSE 3838
