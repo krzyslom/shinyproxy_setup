@@ -42,7 +42,7 @@ proxy:
     display-name: Show container id
     container-cmd: ["R", "-e", "shiny::runApp('/root/id')"]
     container-image: shiny_id
-    access-groups: scientists
+    access-groups: [scientists, mathematicians]
   bind-address: 127.0.0.1
 
 server:
