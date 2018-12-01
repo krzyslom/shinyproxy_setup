@@ -38,10 +38,10 @@ proxy:
     container-cmd: ["R", "-e", "shinyproxy::run_06_tabsets()"]
     container-image: openanalytics/shinyproxy-demo
     access-groups: scientists
-  - id: ip
-    display-name: Show IP
-    container-cmd: ["R", "-e", "shiny::runApp('/root/ip')"]
-    container-image: shiny_ip
+  - id: id
+    display-name: Show container id
+    container-cmd: ["R", "-e", "shiny::runApp('/root/id')"]
+    container-image: shiny_id
     access-groups: scientists
   bind-address: 127.0.0.1
 

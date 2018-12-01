@@ -20,9 +20,9 @@ RUN apt-get update && apt-get install -y \
 RUN R -e "install.packages(c('shiny', 'rmarkdown'), repos = 'https://cloud.r-project.org/')"
 
 # Copy the app to the image
-RUN mkdir /root/ip
-COPY app/ip /root/ip
-RUN rm /root/ip/Dockerfile
+RUN mkdir /root/id
+COPY app/id /root/id
+RUN rm /root/id/Dockerfile
 
 # Make sure that Shiny app will run on the port expected by ShinyProxy
 # and that one will be able to connect to the app from the outside world
@@ -32,4 +32,4 @@ COPY cfg/Rprofile.site /usr/lib/R/etc
 EXPOSE 3838
 
 # Run app
-CMD ["R", "-e", "shiny::runApp('/root/ip')"]
+CMD ["R", "-e", "shiny::runApp('/root/id')"]
