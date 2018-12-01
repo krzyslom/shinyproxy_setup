@@ -39,7 +39,7 @@ proxy:
     container-image: openanalytics/shinyproxy-demo
     access-groups: scientists
   - id: ip
-    display-name: Show app IP
+    display-name: Show IP
     container-cmd: ["R", "-e", "shiny::runApp('/root/ip')"]
     container-image: shiny_ip
     access-groups: scientists
